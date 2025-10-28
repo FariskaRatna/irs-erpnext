@@ -7,7 +7,7 @@ app_color = "#e74c3c"
 app_email = "hello@frappe.io"
 app_license = "GNU General Public License (v3)"
 source_link = "https://github.com/frappe/erpnext"
-app_logo_url = "/assets/erpnext/images/erpnext-logo.svg"
+app_logo_url = "/assets/erpnext/images/transparant.png"
 
 
 add_to_apps_screen = [
@@ -109,8 +109,8 @@ calendars = ["Task", "Work Order", "Sales Order", "Holiday List", "ToDo"]
 website_generators = ["BOM", "Sales Partner"]
 
 website_context = {
-	"favicon": "/assets/erpnext/images/erpnext-favicon.svg",
-	"splash_image": "/assets/erpnext/images/erpnext-logo.svg",
+	"favicon": "/assets/erpnext/images/Favicon.png",
+	"splash_image": "/assets/erpnext/images/transparant.png",
 }
 
 # nosemgrep
