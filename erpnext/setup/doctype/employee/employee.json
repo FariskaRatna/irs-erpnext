@@ -18,7 +18,10 @@
   "middle_name",
   "last_name",
   "employee_name",
+  "initial_name",
   "column_break_9",
+  "nik",
+  "npwp",
   "gender",
   "date_of_birth",
   "salutation",
@@ -816,6 +819,23 @@
    "fieldtype": "Data",
    "label": "IBAN",
    "options": "IBAN"
+  },
+  {
+   "fieldname": "initial_name",
+   "fieldtype": "Data",
+   "label": "Initial Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nik",
+   "fieldtype": "Int",
+   "label": "NIK",
+   "reqd": 1
+  },
+  {
+   "fieldname": "npwp",
+   "fieldtype": "Int",
+   "label": "NPWP"
   }
  ],
  "icon": "fa fa-user",
@@ -823,7 +843,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2025-08-29 11:52:12.819878",
+ "modified": "2025-10-29 11:45:37.771558",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
