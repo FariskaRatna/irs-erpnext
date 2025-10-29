@@ -84,6 +84,12 @@
   "column_break_heye",
   "bank_ac_no",
   "iban",
+  "reimbursements_tab",
+  "reimbursements_section",
+  "total_reimbursement",
+  "balance",
+  "column_break_sycj",
+  "reimbursement_used",
   "personal_details",
   "marital_status",
   "family_background",
@@ -836,6 +842,39 @@
    "fieldname": "npwp",
    "fieldtype": "Int",
    "label": "NPWP"
+  },
+  {
+   "fieldname": "reimbursements_tab",
+   "fieldtype": "Tab Break",
+   "label": "Reimbursements"
+  },
+  {
+   "fieldname": "reimbursements_section",
+   "fieldtype": "Section Break",
+   "label": "Reimbursements"
+  },
+  {
+   "fieldname": "total_reimbursement",
+   "fieldtype": "Currency",
+   "label": "Total Reimbursement",
+   "precision": "0",
+   "reqd": 1
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "label": "Balance",
+   "precision": "0"
+  },
+  {
+   "fieldname": "column_break_sycj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reimbursement_used",
+   "fieldtype": "Currency",
+   "label": "Reimbursement Used",
+   "precision": "0"
   }
  ],
  "icon": "fa fa-user",
@@ -843,7 +882,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2025-10-29 11:45:37.771558",
+ "modified": "2025-10-29 14:53:38.843856",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
