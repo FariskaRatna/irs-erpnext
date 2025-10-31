@@ -839,13 +839,13 @@
   },
   {
    "fieldname": "nik",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "NIK",
    "reqd": 1
   },
   {
    "fieldname": "npwp",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "NPWP"
   },
   {
@@ -890,13 +890,15 @@
    "fieldname": "total_loan",
    "fieldtype": "Currency",
    "label": "Total Loan",
-   "precision": "0"
+   "precision": "0",
+   "read_only": 1
   },
   {
    "fieldname": "installment",
    "fieldtype": "Currency",
    "label": "Installment",
-   "precision": "0"
+   "precision": "0",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_cqis",
@@ -906,7 +908,8 @@
    "fieldname": "loan_balance",
    "fieldtype": "Currency",
    "label": "Loan Balance",
-   "precision": "0"
+   "precision": "0",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-user",
@@ -914,7 +917,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2025-10-30 10:19:55.680581",
+ "modified": "2025-10-31 16:39:44.249511",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
