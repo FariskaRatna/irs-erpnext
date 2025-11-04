@@ -30,20 +30,23 @@ class Employee(NestedSet):
 		set_name_by_naming_series(self)
 		self.employee = self.name
 
-	def onload(self):
-		salary_assignment = frappe.db.get_value(
-			"Salary Structure Assignment",
-			{
-				"employee": self.employee,
-				"docstatus": 1,
-				"from_date": ["<=", frappe.utils.nowdate()],
-			},
-			"base",
-			order_by="from_date desc"
-		)
+	# def onload(self):
+	# 	from frappe.utils import now_datetime
 
-		if salary_assignment:
-			self.total_reimbursement = salary_assignment
+	# 	current_year = now_datetime.year()
+	# 	salary_assignment = frappe.db.get_value(
+	# 		"Salary Structure Assignment",
+	# 		{
+	# 			"employee": self.employee,
+	# 			"docstatus": 1,
+	# 			"from_date": ["<=", frappe.utils.nowdate()],
+	# 		},
+	# 		"base",
+	# 		order_by="from_date desc"
+	# 	)
+
+	# 	if salary_assignment:
+	# 		self.total_reimbursement = salary_assignment
 
 	def validate(self):
 		from erpnext.controllers.status_updater import validate_status
@@ -112,6 +115,22 @@ class Employee(NestedSet):
 			self.update_user()
 			self.update_user_permissions()
 		self.reset_employee_emails_cache()
+
+		base_salary = frappe.db.get_value(
+			"Salary Structure Assignment",
+			{
+				"employee": self.name,
+				"docstatus": 1,
+				"from_date": ["<=", frappe.utils.nowdate()],
+			},
+			"base",
+			order_by="from_date desc"
+		) or 0
+
+		# update ke database kalau berbeda
+		if base_salary and self.total_reimbursement != base_salary:
+			self.total_reimbursement = base_salary
+			frappe.db.set_value("Employee", self.name, "total_reimbursement", base_salary)
 
 	def update_user_permissions(self):
 		if not self.has_value_changed("user_id") and not self.has_value_changed("create_user_permission"):
