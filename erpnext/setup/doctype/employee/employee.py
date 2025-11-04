@@ -9,7 +9,7 @@ from frappe.permissions import (
 	has_permission,
 	remove_user_permission,
 )
-from frappe.utils import cstr, getdate, today, validate_email_address
+from frappe.utils import cstr, getdate, today, validate_email_address, nowdate
 from frappe.utils.nestedset import NestedSet
 
 from erpnext.utilities.transaction_base import delete_events
@@ -29,6 +29,21 @@ class Employee(NestedSet):
 	def autoname(self):
 		set_name_by_naming_series(self)
 		self.employee = self.name
+
+	def onload(self):
+		salary_assignment = frappe.db.get_value(
+			"Salary Structure Assignment",
+			{
+				"employee": self.employee,
+				"docstatus": 1,
+				"from_date": ["<=", frappe.utils.nowdate()],
+			},
+			"base",
+			order_by="from_date desc"
+		)
+
+		if salary_assignment:
+			self.total_reimbursement = salary_assignment
 
 	def validate(self):
 		from erpnext.controllers.status_updater import validate_status
@@ -53,6 +68,20 @@ class Employee(NestedSet):
 				validate_employee_role(user, ignore_emp_check=True)
 				user.save(ignore_permissions=True)
 				remove_user_permission("Employee", self.name, existing_user_id)
+
+		# salary_assignment = frappe.db.get_value(
+		# 	"Salary Structure Assignment",
+		# 	{
+		# 		"employee": self.employee,
+		# 		"docstatus": 1,
+		# 		"from_date": ["<=", frappe.utils.nowdate()],
+		# 	},
+		# 	"base",
+		# 	order_by="from_date desc"
+		# )
+
+		# if salary_assignment:
+		# 	self.total_reimbursement = salary_assignment
 
 	def after_rename(self, old, new, merge):
 		self.db_set("employee", new)

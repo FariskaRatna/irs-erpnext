@@ -21,6 +21,7 @@ class EmployeeInternalWorkHistory(Document):
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
+		project: DF.Link | None
 		to_date: DF.Date | None
 	# end: auto-generated types
 

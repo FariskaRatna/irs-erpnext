@@ -25,6 +25,7 @@
   "gender",
   "date_of_birth",
   "salutation",
+  "project",
   "column_break1",
   "date_of_joining",
   "image",
@@ -862,8 +863,7 @@
    "fieldname": "total_reimbursement",
    "fieldtype": "Currency",
    "label": "Total Reimbursement",
-   "precision": "0",
-   "reqd": 1
+   "precision": "0"
   },
   {
    "fieldname": "balance",
@@ -910,6 +910,12 @@
    "label": "Loan Balance",
    "precision": "0",
    "read_only": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
   }
  ],
  "icon": "fa fa-user",
@@ -917,7 +923,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2025-10-31 16:39:44.249511",
+ "modified": "2025-11-04 15:47:31.547225",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
