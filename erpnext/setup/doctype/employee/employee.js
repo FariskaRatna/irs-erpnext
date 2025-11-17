@@ -84,6 +84,14 @@ frappe.ui.form.on("Employee", {
 			},
 		});
 	},
+
+	base: function(frm) {
+		if (frm.doc.base) {
+			frm.set_value("total_reimbursement", frm.doc.base);
+		} else {
+			frm.set_value("total_reimbursement", 0)
+		}
+	}
 });
 
 cur_frm.cscript = new erpnext.setup.EmployeeController({
