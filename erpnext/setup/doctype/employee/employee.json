@@ -77,6 +77,10 @@
   "attendance_device_id",
   "column_break_44",
   "holiday_list",
+  "section_break_nqmq",
+  "project_manager",
+  "column_break_vohb",
+  "hrd_user",
   "salary_information",
   "ctc",
   "salary_currency",
@@ -923,6 +927,27 @@
    "fieldtype": "Data",
    "label": "Initial Name Face",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_nqmq",
+   "fieldtype": "Section Break",
+   "label": "Project Manager & HR Assignment"
+  },
+  {
+   "fieldname": "project_manager",
+   "fieldtype": "Link",
+   "label": "Project Manager",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_vohb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hrd_user",
+   "fieldtype": "Link",
+   "label": "HRD User",
+   "options": "User"
   }
  ],
  "icon": "fa fa-user",
@@ -930,7 +955,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2025-11-04 15:47:31.547225",
+ "modified": "2025-11-17 12:10:51.673294",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
