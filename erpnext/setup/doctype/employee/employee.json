@@ -890,15 +890,15 @@
    "fieldname": "total_loan",
    "fieldtype": "Currency",
    "label": "Total Loan",
-   "precision": "0",
-   "read_only": 1
+   "permlevel": 1,
+   "precision": "0"
   },
   {
    "fieldname": "installment",
    "fieldtype": "Currency",
    "label": "Installment",
-   "precision": "0",
-   "read_only": 1
+   "permlevel": 1,
+   "precision": "0"
   },
   {
    "fieldname": "column_break_cqis",
@@ -908,8 +908,8 @@
    "fieldname": "loan_balance",
    "fieldtype": "Currency",
    "label": "Loan Balance",
-   "precision": "0",
-   "read_only": 1
+   "permlevel": 1,
+   "precision": "0"
   },
   {
    "fieldname": "project",
@@ -923,7 +923,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2025-11-04 15:47:31.547225",
+ "modified": "2025-11-10 11:17:05.910844",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
