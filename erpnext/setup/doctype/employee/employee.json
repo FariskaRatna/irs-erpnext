@@ -18,7 +18,8 @@
   "middle_name",
   "last_name",
   "employee_name",
-  "initial_name",
+  "initial_name_finger",
+  "initial_name_face",
   "column_break_9",
   "nik",
   "npwp",
@@ -833,12 +834,6 @@
    "options": "IBAN"
   },
   {
-   "fieldname": "initial_name",
-   "fieldtype": "Data",
-   "label": "Initial Name",
-   "reqd": 1
-  },
-  {
    "fieldname": "nik",
    "fieldtype": "Data",
    "label": "NIK",
@@ -916,6 +911,18 @@
    "fieldtype": "Link",
    "label": "Project",
    "options": "Project"
+  },
+  {
+   "fieldname": "initial_name_finger",
+   "fieldtype": "Data",
+   "label": "Initial Name Fingerprint",
+   "reqd": 1
+  },
+  {
+   "fieldname": "initial_name_face",
+   "fieldtype": "Data",
+   "label": "Initial Name Face",
+   "reqd": 1
   }
  ],
  "icon": "fa fa-user",
@@ -924,6 +931,7 @@
  "is_tree": 1,
  "links": [],
  "modified": "2025-11-04 15:47:31.547225",
+ "modified": "2025-11-14 14:20:12.444193",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
