@@ -75,6 +75,7 @@
   "relation",
   "attendance_and_leave_details",
   "attendance_device_id",
+  "mass_leave_list",
   "column_break_44",
   "holiday_list",
   "section_break_nqmq",
@@ -949,6 +950,12 @@
    "fieldtype": "Link",
    "label": "HRD User",
    "options": "User"
+  },
+  {
+   "fieldname": "mass_leave_list",
+   "fieldtype": "Link",
+   "label": "Mass Leave",
+   "options": "Holiday List"
   }
  ],
  "icon": "fa fa-user",
@@ -956,7 +963,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2025-11-19 10:07:07.236580",
+ "modified": "2025-11-24 15:14:10.594602",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
