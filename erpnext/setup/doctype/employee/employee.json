@@ -162,6 +162,7 @@
    "oldfieldname": "naming_series",
    "oldfieldtype": "Select",
    "options": "HR-EMP-",
+   "read_only": 1,
    "set_only_once": 1
   },
   {
@@ -955,7 +956,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2025-11-17 12:10:51.673294",
+ "modified": "2025-11-19 10:07:07.236580",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
