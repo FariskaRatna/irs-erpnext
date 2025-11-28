@@ -76,6 +76,7 @@
   "attendance_and_leave_details",
   "attendance_device_id",
   "mass_leave_list",
+  "total_mass_leave",
   "column_break_44",
   "holiday_list",
   "section_break_nqmq",
@@ -956,6 +957,12 @@
    "fieldtype": "Link",
    "label": "Mass Leave",
    "options": "Holiday List"
+  },
+  {
+   "fetch_from": "mass_leave_list.total_holidays",
+   "fieldname": "total_mass_leave",
+   "fieldtype": "Data",
+   "label": "Total Mass Leave"
   }
  ],
  "icon": "fa fa-user",
@@ -963,7 +970,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2025-11-24 15:14:10.594602",
+ "modified": "2025-11-25 11:10:23.528842",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
