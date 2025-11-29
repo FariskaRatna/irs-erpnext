@@ -934,12 +934,12 @@
   {
    "fieldname": "section_break_nqmq",
    "fieldtype": "Section Break",
-   "label": "Project Manager & HR Assignment"
+   "label": "Lead & HR Assignment"
   },
   {
    "fieldname": "project_manager",
    "fieldtype": "Link",
-   "label": "Project Manager",
+   "label": "Lead",
    "options": "User"
   },
   {
