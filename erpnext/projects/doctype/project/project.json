@@ -21,6 +21,10 @@
   "expected_end_date",
   "priority",
   "department",
+  "column_break_kllv",
+  "project_code_item",
+  "project_code_section",
+  "project_code_detail",
   "customer_details",
   "customer",
   "column_break_14",
@@ -455,6 +459,27 @@
    "fieldtype": "Data",
    "label": "Subject",
    "mandatory_depends_on": "collect_progress"
+  },
+  {
+   "fieldname": "project_code_item",
+   "fieldtype": "Table",
+   "label": "Project Code",
+   "options": "Project Code Item"
+  },
+  {
+   "fieldname": "column_break_kllv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_code_section",
+   "fieldtype": "Section Break",
+   "label": "Project Code"
+  },
+  {
+   "fieldname": "project_code_detail",
+   "fieldtype": "Table",
+   "label": "Project Code Detail",
+   "options": "Project Code Item"
   }
  ],
  "icon": "fa fa-puzzle-piece",
@@ -462,7 +487,7 @@
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 4,
- "modified": "2025-08-21 17:57:58.314809",
+ "modified": "2025-12-17 10:03:35.451119",
  "modified_by": "Administrator",
  "module": "Projects",
  "name": "Project",
