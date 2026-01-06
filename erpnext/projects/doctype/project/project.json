@@ -21,8 +21,7 @@
   "expected_end_date",
   "priority",
   "department",
-  "column_break_kllv",
-  "project_code_item",
+  "project_manager",
   "project_code_section",
   "project_code_detail",
   "customer_details",
@@ -461,16 +460,6 @@
    "mandatory_depends_on": "collect_progress"
   },
   {
-   "fieldname": "project_code_item",
-   "fieldtype": "Table",
-   "label": "Project Code",
-   "options": "Project Code Item"
-  },
-  {
-   "fieldname": "column_break_kllv",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "project_code_section",
    "fieldtype": "Section Break",
    "label": "Project Code"
@@ -480,6 +469,13 @@
    "fieldtype": "Table",
    "label": "Project Code Detail",
    "options": "Project Code Item"
+  },
+  {
+   "fieldname": "project_manager",
+   "fieldtype": "Link",
+   "label": "Project Manager",
+   "options": "User",
+   "reqd": 1
   }
  ],
  "icon": "fa fa-puzzle-piece",
@@ -487,7 +483,7 @@
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 4,
- "modified": "2025-12-17 10:03:35.451119",
+ "modified": "2026-01-05 17:01:27.541771",
  "modified_by": "Administrator",
  "module": "Projects",
  "name": "Project",
@@ -495,15 +491,12 @@
  "owner": "Administrator",
  "permissions": [
   {
-   "create": 1,
-   "delete": 1,
    "email": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Projects User",
-   "share": 1,
-   "write": 1
+   "share": 1
   },
   {
    "permlevel": 1,
@@ -527,9 +520,9 @@
    "email": 1,
    "export": 1,
    "print": 1,
+   "read": 1,
    "report": 1,
    "role": "Employee",
-   "select": 1,
    "share": 1
   }
  ],
