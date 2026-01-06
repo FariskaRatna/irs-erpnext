@@ -111,6 +111,26 @@ frappe.ui.form.on("Timesheet", {
 			};
 		});
 
+		setTimeout(function() {
+			let save_button = frm.page.wrapper.find('.primary-action');
+			if (save_button.length > 0) {
+				save_button.hide();
+
+				let custom_button = $('<div>')
+					.css({
+						'text-align': 'right',
+						'margin-top': '20px',
+						'position': 'relative',
+						'bottom': '10px',
+						'width': '100%'
+					}).appendTo(frm.$wrapper.find('.form-layout'));
+
+				save_button.appendTo(custom_button);
+
+				save_button.show();
+			}
+		}, 50);
+
 		frm.trigger("setup_filters");
 		frm.trigger("set_dynamic_field_label");
 		frm.trigger("set_route_options_for_new_task");
