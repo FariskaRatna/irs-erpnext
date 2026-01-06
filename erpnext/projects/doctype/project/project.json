@@ -468,7 +468,7 @@
    "fieldname": "project_code_detail",
    "fieldtype": "Table",
    "label": "Project Code Detail",
-   "options": "Project Code Item"
+   "options": "Project Code"
   },
   {
    "default": "__user",
@@ -484,7 +484,7 @@
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 4,
- "modified": "2026-01-06 10:23:47.916029",
+ "modified": "2026-01-06 12:01:40.226705",
  "modified_by": "Administrator",
  "module": "Projects",
  "name": "Project",

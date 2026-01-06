@@ -1,11 +1,11 @@
-# Copyright (c) 2025, Frappe Technologies Pvt. Ltd. and contributors
+# Copyright (c) 2026, Frappe Technologies Pvt. Ltd. and contributors
 # For license information, please see license.txt
 
 # import frappe
 from frappe.model.document import Document
 
 
-class ProjectCode(Document):
+class ProjectCodeItem(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -13,13 +13,11 @@ class ProjectCode(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
-		from hrms.hr.doctype.project_code_item.project_code_item import ProjectCodeItem
 
-		is_active: DF.Check
-		items: DF.Table[ProjectCodeItem]
+		description: DF.SmallText | None
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
-		project_code: DF.Data
+		project_code: DF.Data | None
 	# end: auto-generated types
 	pass
