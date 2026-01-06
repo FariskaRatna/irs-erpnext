@@ -20,6 +20,12 @@ frappe.listview_settings["Task"] = {
 		listview.page.add_menu_item(__("Set as Completed"), function () {
 			listview.call_for_selected_items(method, { status: "Completed" });
 		});
+
+		listview.page_length = 100;
+		
+		$('button[data-value="20"]').removeClass("btn-info");
+		$('button[data-calue="100"]').addClass("btn-info");
+		listview.refresh();
 	},
 	get_indicator: function (doc) {
 		var colors = {

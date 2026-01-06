@@ -8,4 +8,12 @@ frappe.listview_settings["Project"] = {
 			return [__(doc.status), frappe.utils.guess_colour(doc.status), "status,=," + doc.status];
 		}
 	},
+
+	onload: function(listview) {
+		listview.page_length = 100;
+		
+		$('button[data-value="20"]').removeClass("btn-info");
+		$('button[data-calue="100"]').addClass("btn-info");
+		listview.refresh();
+	}
 };
