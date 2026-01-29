@@ -27,6 +27,24 @@ frappe.ui.form.on("Employee", {
 		};
 	},
 
+	refresh: function (frm) {
+		if (!frm.doc.name) return;
+
+        frappe.call({
+            method: "erpnext.setup.doctype.employee.employee.get_reimbursement_info",
+            args: {
+                employee: frm.doc.name
+            },
+            callback(r) {
+                if (!r.message) return;
+
+                frm.set_value("total_reimbursement", r.message.total);
+                frm.set_value("reimbursement_used", r.message.used);
+                frm.set_value("balance", r.message.balance);
+            }
+        });
+	},
+
 	onload: function (frm) {
 		frm.set_query("department", function () {
 			return {
