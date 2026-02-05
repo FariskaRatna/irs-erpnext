@@ -1,0 +1,42 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-01-27 13:27:08.939975",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "mandatory": 0,
+   "options": "Project",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 1,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-02-05 13:42:53.090419",
+ "modified_by": "Administrator",
+ "module": "Projects",
+ "name": "Task Count by Asignee",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\r\n    COALESCE(u.full_name, t.allocated_to) AS \"Employee:Data:250\",\r\n    COUNT(td.name) AS \"Total Tasks:Int:120\"\r\nFROM `tabToDo` t\r\nJOIN `tabTask` td\r\n    ON t.reference_name = td.name\r\nLEFT JOIN `tabUser` u\r\n    ON u.name = t.allocated_to\r\nWHERE\r\n    t.reference_type = 'Task'\r\n    AND td.docstatus < 2\r\n    AND td.project = %(project)s\r\nGROUP BY COALESCE(u.full_name, t.allocated_to)\r\nORDER BY COUNT(td.name) DESC\r\n",
+ "ref_doctype": "Task",
+ "report_name": "Task Count by Asignee",
+ "report_script": "import frappe\r\n\r\ndef execute(filters=None):\r\n    filters = filters or {}\r\n\r\n    conditions = []\r\n    values = {}\r\n\r\n    if filters.get(\"project\"):\r\n        conditions.append(\"td.project = %(project)s\")\r\n        values[\"project\"] = filters.get(\"project\")\r\n\r\n    if filters.get(\"employee\"):\r\n        conditions.append(\"t.allocated_to = %(employee)s\")\r\n        values[\"employee\"] = filters.get(\"employee\")\r\n\r\n    condition_sql = \"\"\r\n    if conditions:\r\n        condition_sql = \" AND \" + \" AND \".join(conditions)\r\n\r\n    columns = [\r\n        {\r\n            \"label\": \"Employee\",\r\n            \"fieldname\": \"employee\",\r\n            \"fieldtype\": \"Data\",\r\n            \"width\": 250\r\n        },\r\n        {\r\n            \"label\": \"Total Tasks\",\r\n            \"fieldname\": \"total_tasks\",\r\n            \"fieldtype\": \"Int\",\r\n            \"width\": 120\r\n        }\r\n    ]\r\n\r\n    data = frappe.db.sql(f\"\"\"\r\n        SELECT\r\n            COALESCE(u.full_name, t.allocated_to) AS employee,\r\n            COUNT(td.name) AS total_tasks\r\n        FROM `tabToDo` t\r\n        JOIN `tabTask` td\r\n            ON t.reference_name = td.name\r\n        LEFT JOIN `tabUser` u\r\n            ON u.name = t.allocated_to\r\n        WHERE\r\n            t.reference_type = 'Task'\r\n            AND td.docstatus < 2\r\n            {condition_sql}\r\n        GROUP BY employee\r\n        ORDER BY total_tasks DESC\r\n    \"\"\", values, as_dict=True)\r\n\r\n    return columns, data\r\n",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Projects User"
+  },
+  {
+   "role": "Employee Self Service"
+  }
+ ],
+ "timeout": 0
+}
