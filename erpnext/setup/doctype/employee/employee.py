@@ -485,3 +485,30 @@ def has_upload_permission(doc, ptype="read", user=None):
 	if get_doc_permissions(doc, user=user, ptype=ptype).get(ptype):
 		return True
 	return doc.user_id == user
+
+
+@frappe.whitelist()
+def get_reimbursement_info(employee):
+    ssa_base = frappe.db.get_value(
+        "Salary Structure Assignment",
+        {
+            "employee": employee,
+            "docstatus": 1,
+            "from_date": ("<=", frappe.utils.nowdate())
+        },
+        "base",
+        order_by="from_date desc"
+    ) or 0
+
+    used = frappe.db.get_value(
+        "Employee",
+        employee,
+        "reimbursement_used"
+    ) or 0
+
+    return {
+        "total": ssa_base,
+        "used": used,
+        "balance": ssa_base - used
+    }
+

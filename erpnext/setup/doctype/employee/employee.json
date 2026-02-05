@@ -99,7 +99,6 @@
   "balance",
   "column_break_sycj",
   "reimbursement_used",
-  "salary_structure",
   "loans_tab",
   "total_loan",
   "installment",
@@ -863,17 +862,18 @@
    "label": "Reimbursements"
   },
   {
-   "fetch_from": "salary_structure.base",
    "fieldname": "total_reimbursement",
    "fieldtype": "Currency",
    "label": "Total Reimbursement",
-   "precision": "0"
+   "precision": "0",
+   "read_only": 1
   },
   {
    "fieldname": "balance",
    "fieldtype": "Currency",
    "label": "Balance",
-   "precision": "0"
+   "precision": "0",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_sycj",
@@ -883,7 +883,8 @@
    "fieldname": "reimbursement_used",
    "fieldtype": "Currency",
    "label": "Reimbursement Used",
-   "precision": "0"
+   "precision": "0",
+   "read_only": 1
   },
   {
    "fieldname": "loans_tab",
@@ -970,13 +971,6 @@
    "fieldname": "id_irs",
    "fieldtype": "Data",
    "label": "ID IRS"
-  },
-  {
-   "fieldname": "salary_structure",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Salary Structure",
-   "options": "Salary Structure Assignment"
   }
  ],
  "icon": "fa fa-user",
@@ -984,7 +978,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2026-01-22 10:44:53.309963",
+ "modified": "2025-12-22 14:38:12.674005",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
